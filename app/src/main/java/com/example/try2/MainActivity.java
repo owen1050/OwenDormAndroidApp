@@ -11,15 +11,17 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static HttpURLConnection con;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         Button fab = findViewById(R.id.button);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +63,119 @@ public class MainActivity extends AppCompatActivity {
                     Log.e("Owen",content.toString());
                     updateTextView(content.toString());
                     view.invalidate();
+                }
+                catch (Exception e){
+                    Log.e("Owen",e.toString());
+                }
+                //updateTextView(Long.toString(System.currentTimeMillis()));
+            }
+        });
+
+        Button cust = findViewById(R.id.button7);
+        cust.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringBuilder content;
+                content = new StringBuilder();
+                try{
+
+
+                    Log.e("Owen", "LF");
+
+                    String url = "http://owenserver.us.to:23654";
+                    StrictMode.ThreadPolicy policy = new
+                            StrictMode.ThreadPolicy.Builder()
+                            .permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+
+
+                    URL myurl = new URL(url);
+                    con = (HttpURLConnection) myurl.openConnection();
+                    con.setDoOutput(true);
+                    con.setRequestMethod("POST");
+
+                    OutputStreamWriter out = new OutputStreamWriter(
+                            con.getOutputStream());
+                    EditText edit =  (EditText) findViewById(R.id.editText);
+                    String temp = edit.getText().toString();
+                    out.write(temp);
+                    out.close();
+                    con.getInputStream();
+                    con.disconnect();
+                }
+                catch (Exception e){
+                    Log.e("Owen",e.toString());
+                }
+                //updateTextView(Long.toString(System.currentTimeMillis()));
+            }
+        });
+        Button res = findViewById(R.id.button8);
+        res.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringBuilder content;
+                content = new StringBuilder();
+                try{
+
+
+                    Log.e("Owen", "LF");
+
+                    String url = "http://owenserver.us.to:23654";
+                    StrictMode.ThreadPolicy policy = new
+                            StrictMode.ThreadPolicy.Builder()
+                            .permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+
+
+                    URL myurl = new URL(url);
+                    con = (HttpURLConnection) myurl.openConnection();
+                    con.setDoOutput(true);
+                    con.setRequestMethod("POST");
+
+                    OutputStreamWriter out = new OutputStreamWriter(
+                            con.getOutputStream());
+
+                    out.write("sudo_reset");
+                    out.close();
+                    con.getInputStream();
+                    con.disconnect();
+                }
+                catch (Exception e){
+                    Log.e("Owen",e.toString());
+                }
+                //updateTextView(Long.toString(System.currentTimeMillis()));
+            }
+        });
+        Button reb = findViewById(R.id.button3);
+        reb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringBuilder content;
+                content = new StringBuilder();
+                try{
+
+
+                    Log.e("Owen", "LF");
+
+                    String url = "http://owenserver.us.to:23654";
+                    StrictMode.ThreadPolicy policy = new
+                            StrictMode.ThreadPolicy.Builder()
+                            .permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+
+
+                    URL myurl = new URL(url);
+                    con = (HttpURLConnection) myurl.openConnection();
+                    con.setDoOutput(true);
+                    con.setRequestMethod("POST");
+
+                    OutputStreamWriter out = new OutputStreamWriter(
+                            con.getOutputStream());
+
+                    out.write("sudo_reboot");
+                    out.close();
+                    con.getInputStream();
+                    con.disconnect();
                 }
                 catch (Exception e){
                     Log.e("Owen",e.toString());

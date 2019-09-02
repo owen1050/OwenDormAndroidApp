@@ -138,7 +138,7 @@ public class widget extends AppWidgetProvider {
 
                 OutputStreamWriter out = new OutputStreamWriter(
                         con.getOutputStream());
-                out.write("set:bothLightsOn=1;");
+                out.write("multipleChange:bothLights=1;");
                 out.close();
                 con.getInputStream();
                 con.disconnect();
@@ -161,7 +161,7 @@ public class widget extends AppWidgetProvider {
 
                 OutputStreamWriter out = new OutputStreamWriter(
                         con.getOutputStream());
-                out.write("set:bothLightsOff=1;");
+                out.write("multipleChange:bothLights=0;");
                 out.close();
                 con.getInputStream();
                 con.disconnect();            }
