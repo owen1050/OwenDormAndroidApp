@@ -100,8 +100,19 @@ public class MainActivity extends AppCompatActivity {
                     String temp = edit.getText().toString();
                     out.write(temp);
                     out.close();
-                    con.getInputStream();
+                    BufferedReader in = new BufferedReader(
+                            new InputStreamReader(con.getInputStream()));
+                    String inputLine;
+                    StringBuffer response = new StringBuffer();
+
+                    while ((inputLine = in.readLine()) != null) {
+                        response.append(inputLine);
+                    }
+                    in.close();
                     con.disconnect();
+                    TextView tv3 = (TextView)findViewById(R.id.textView3);
+                    tv3.setText(response.toString());
+
                 }
                 catch (Exception e){
                     Log.e("Owen",e.toString());
