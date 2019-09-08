@@ -176,10 +176,8 @@ public class MainActivity extends AppCompatActivity {
                 content = new StringBuilder();
                 try{
 
-
-                    Log.e("Owen", "LF");
-
-                    String url = "http://owenserver.us.to:23654";
+                    Log.e("Owen","test");
+                    String url = "http://owenserver.us.to:23655";
                     StrictMode.ThreadPolicy policy = new
                             StrictMode.ThreadPolicy.Builder()
                             .permitAll().build();
@@ -187,33 +185,25 @@ public class MainActivity extends AppCompatActivity {
 
 
                     URL myurl = new URL(url);
-                    con = (HttpURLConnection) myurl.openConnection();
-                    con.setDoOutput(true);
-                    con.setRequestMethod("POST");
+                    HttpURLConnection con = (HttpURLConnection) myurl.openConnection();
 
-                    OutputStreamWriter out = new OutputStreamWriter(
-                            con.getOutputStream());
-
-                    out.write("sudo_reboot");
-                    out.close();
+                    con.setRequestMethod("GET");
                     BufferedReader in = new BufferedReader(
                             new InputStreamReader(con.getInputStream()));
-                    String inputLine;
-                    StringBuffer response = new StringBuffer();
 
-                    while ((inputLine = in.readLine()) != null) {
-                        response.append(inputLine);
+                    String line;
+                    while ((line = in.readLine()) != null) {
+                        content.append(line);
+                        content.append(System.lineSeparator());
                     }
-                    in.close();
                     con.disconnect();
-                    TextView tv3 = (TextView)findViewById(R.id.textView3);
-                    tv3.setText(response.toString());
-                    con.disconnect();
+                    Log.e("Owen",content.toString());
+                    updateTextView(content.toString());
+                    view.invalidate();
                 }
                 catch (Exception e){
                     Log.e("Owen",e.toString());
                 }
-                //updateTextView(Long.toString(System.currentTimeMillis()));
             }
         });
         Button sptoch = findViewById(R.id.sptochrome);
