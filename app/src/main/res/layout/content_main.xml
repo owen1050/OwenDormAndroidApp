@@ -8,73 +8,234 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    <Button
+        android:id="@+id/tvspb"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Speakers to TV"
+        app:layout_constraintStart_toStartOf="@+id/hallOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/pOffB" />
+
+    <Button
+        android:id="@+id/sptochrome"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Speakers to chromecast"
+        app:layout_constraintStart_toEndOf="@+id/hallOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/tvOffB" />
+
+    <Button
+        android:id="@+id/volup1b"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Volume Up"
+        app:layout_constraintStart_toEndOf="@+id/tvOffB"
+        app:layout_constraintTop_toBottomOf="@+id/unmuteB" />
+
+    <Button
+        android:id="@+id/pOffB"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Proj Off"
+        app:layout_constraintStart_toStartOf="@+id/hallOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/pONb" />
+
+    <Button
+        android:id="@+id/tvOffB"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TV Off"
+        app:layout_constraintStart_toEndOf="@+id/hallOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/TVonb" />
+
+    <Button
+        android:id="@+id/unmuteB"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="unmute"
+        app:layout_constraintStart_toEndOf="@+id/TVonb"
+        app:layout_constraintTop_toBottomOf="@+id/muteb" />
+
+    <Button
+        android:id="@+id/TVonb"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TV On"
+        app:layout_constraintStart_toEndOf="@+id/hallOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/mainOffButton" />
+
+    <Button
+        android:id="@+id/pONb"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Proj On"
+        app:layout_constraintStart_toStartOf="@+id/hallOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/hallOffButton" />
+
+    <Button
+        android:id="@+id/muteb"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="mute"
+        app:layout_constraintStart_toEndOf="@+id/mainOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/lightsOffButton" />
+
+    <Button
+        android:id="@+id/hallOffButton"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Hall Off"
+        app:layout_constraintStart_toStartOf="@+id/hallOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/hallOnButton" />
+
+    <Button
+        android:id="@+id/mainOffButton"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Main off"
+        app:layout_constraintStart_toEndOf="@+id/hallOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/mainOnButton" />
+
+    <Button
+        android:id="@+id/lightsOffButton"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="lights off"
+        app:layout_constraintStart_toEndOf="@+id/mainOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/lightsOnbutton" />
+
+    <Button
+        android:id="@+id/sptoprojb"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Speakers to projector"
+        app:layout_constraintStart_toStartOf="@+id/hallOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/tvspb" />
+
+    <Button
+        android:id="@+id/sptophoneb"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Speakers to phonograph"
+        app:layout_constraintStart_toEndOf="@+id/hallOnButton"
+        app:layout_constraintTop_toBottomOf="@+id/sptochrome" />
+
+    <Button
+        android:id="@+id/volDownB"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Volume Down"
+        app:layout_constraintStart_toStartOf="@+id/volup1b"
+        app:layout_constraintTop_toBottomOf="@+id/volup1b" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="GetTest"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Get Test"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
         android:text="Reboot"
-        app:layout_constraintStart_toStartOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintStart_toEndOf="@+id/button8"
+        app:layout_constraintTop_toTopOf="@+id/button8" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:text="Reset"
-        app:layout_constraintStart_toStartOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="42dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="Submit"
         app:layout_constraintStart_toEndOf="@+id/editText"
         app:layout_constraintTop_toTopOf="@+id/editText" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="291dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Custom request"
+        android:text="return_all"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="24dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/lightsOnbutton"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:text="Lights On"
+        app:layout_constraintStart_toEndOf="@+id/mainOnButton"
+        app:layout_constraintTop_toTopOf="@+id/mainOnButton" />
+
+    <Button
+        android:id="@+id/mainOnButton"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:text="Main ON"
+        app:layout_constraintStart_toEndOf="@+id/hallOnButton"
+        app:layout_constraintTop_toTopOf="@+id/hallOnButton" />
+
+    <Button
+        android:id="@+id/hallOnButton"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="70dp"
+        android:text="Hall On"
+        app:layout_constraintStart_toStartOf="@+id/button8"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
 
 </android.support.constraint.ConstraintLayout>
