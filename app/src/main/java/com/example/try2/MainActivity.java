@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
 
         Button fab = findViewById(R.id.button);
@@ -678,51 +676,8 @@ public class MainActivity extends AppCompatActivity {
                 //updateTextView(Long.toString(System.currentTimeMillis()));
             }
         });
-        Button tvoff = findViewById(R.id.tvOffB);
-        tvoff.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                StringBuilder content;
-                content = new StringBuilder();
-                try{
-                    Log.e("Owen", "LF");
 
-                    String url = "http://owenserver.us.to:23654";
-                    StrictMode.ThreadPolicy policy = new
-                            StrictMode.ThreadPolicy.Builder()
-                            .permitAll().build();
-                    StrictMode.setThreadPolicy(policy);
 
-                    URL myurl = new URL(url);
-                    con = (HttpURLConnection) myurl.openConnection();
-                    con.setDoOutput(true);
-                    con.setRequestMethod("POST");
-
-                    OutputStreamWriter out = new OutputStreamWriter(
-                            con.getOutputStream());
-
-                    out.write("set:tvOff=1;");
-                    out.close();
-                    BufferedReader in = new BufferedReader(
-                            new InputStreamReader(con.getInputStream()));
-                    String inputLine;
-                    StringBuffer response = new StringBuffer();
-
-                    while ((inputLine = in.readLine()) != null) {
-                        response.append(inputLine);
-                    }
-                    in.close();
-                    con.disconnect();
-                    TextView tv3 = (TextView)findViewById(R.id.textView3);
-                    tv3.setText(response.toString());
-                    con.disconnect();
-                }
-                catch (Exception e){
-                    Log.e("Owen",e.toString());
-                }
-                //updateTextView(Long.toString(System.currentTimeMillis()));
-            }
-        });
         Button mute = findViewById(R.id.muteb);
         mute.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -768,51 +723,7 @@ public class MainActivity extends AppCompatActivity {
                 //updateTextView(Long.toString(System.currentTimeMillis()));
             }
         });
-        Button unmute = findViewById(R.id.unmuteB);
-        unmute.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                StringBuilder content;
-                content = new StringBuilder();
-                try{
-                    Log.e("Owen", "LF");
 
-                    String url = "http://owenserver.us.to:23654";
-                    StrictMode.ThreadPolicy policy = new
-                            StrictMode.ThreadPolicy.Builder()
-                            .permitAll().build();
-                    StrictMode.setThreadPolicy(policy);
-
-                    URL myurl = new URL(url);
-                    con = (HttpURLConnection) myurl.openConnection();
-                    con.setDoOutput(true);
-                    con.setRequestMethod("POST");
-
-                    OutputStreamWriter out = new OutputStreamWriter(
-                            con.getOutputStream());
-
-                    out.write("set:speakerMute=1;");
-                    out.close();
-                    BufferedReader in = new BufferedReader(
-                            new InputStreamReader(con.getInputStream()));
-                    String inputLine;
-                    StringBuffer response = new StringBuffer();
-
-                    while ((inputLine = in.readLine()) != null) {
-                        response.append(inputLine);
-                    }
-                    in.close();
-                    con.disconnect();
-                    TextView tv3 = (TextView)findViewById(R.id.textView3);
-                    tv3.setText(response.toString());
-                    con.disconnect();
-                }
-                catch (Exception e){
-                    Log.e("Owen",e.toString());
-                }
-                //updateTextView(Long.toString(System.currentTimeMillis()));
-            }
-        });
         Button sptv = findViewById(R.id.tvspb);
         sptv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1017,6 +928,96 @@ public class MainActivity extends AppCompatActivity {
                             con.getOutputStream());
 
                     out.write("set:speakerVolumeDown=2;");
+                    out.close();
+                    BufferedReader in = new BufferedReader(
+                            new InputStreamReader(con.getInputStream()));
+                    String inputLine;
+                    StringBuffer response = new StringBuffer();
+
+                    while ((inputLine = in.readLine()) != null) {
+                        response.append(inputLine);
+                    }
+                    in.close();
+                    con.disconnect();
+                    TextView tv3 = (TextView)findViewById(R.id.textView3);
+                    tv3.setText(response.toString());
+                    con.disconnect();
+                }
+                catch (Exception e){
+                    Log.e("Owen",e.toString());
+                }
+                //updateTextView(Long.toString(System.currentTimeMillis()));
+            }
+        });
+        Button obb = findViewById(R.id.boB);
+        obb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringBuilder content;
+                content = new StringBuilder();
+                try{
+                    Log.e("Owen", "LF");
+
+                    String url = "http://owenserver.us.to:23654";
+                    StrictMode.ThreadPolicy policy = new
+                            StrictMode.ThreadPolicy.Builder()
+                            .permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+
+                    URL myurl = new URL(url);
+                    con = (HttpURLConnection) myurl.openConnection();
+                    con.setDoOutput(true);
+                    con.setRequestMethod("POST");
+
+                    OutputStreamWriter out = new OutputStreamWriter(
+                            con.getOutputStream());
+
+                    out.write("set:blindsMoveAllUp=1;");
+                    out.close();
+                    BufferedReader in = new BufferedReader(
+                            new InputStreamReader(con.getInputStream()));
+                    String inputLine;
+                    StringBuffer response = new StringBuffer();
+
+                    while ((inputLine = in.readLine()) != null) {
+                        response.append(inputLine);
+                    }
+                    in.close();
+                    con.disconnect();
+                    TextView tv3 = (TextView)findViewById(R.id.textView3);
+                    tv3.setText(response.toString());
+                    con.disconnect();
+                }
+                catch (Exception e){
+                    Log.e("Owen",e.toString());
+                }
+                //updateTextView(Long.toString(System.currentTimeMillis()));
+            }
+        });
+        Button cbb = findViewById(R.id.bcB);
+        cbb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringBuilder content;
+                content = new StringBuilder();
+                try{
+                    Log.e("Owen", "LF");
+
+                    String url = "http://owenserver.us.to:23654";
+                    StrictMode.ThreadPolicy policy = new
+                            StrictMode.ThreadPolicy.Builder()
+                            .permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+
+                    URL myurl = new URL(url);
+                    con = (HttpURLConnection) myurl.openConnection();
+                    con.setDoOutput(true);
+                    con.setRequestMethod("POST");
+
+                    OutputStreamWriter out = new OutputStreamWriter(
+                            con.getOutputStream());
+
+                    out.write("set:blindMoveAllDown=1;");
                     out.close();
                     BufferedReader in = new BufferedReader(
                             new InputStreamReader(con.getInputStream()));

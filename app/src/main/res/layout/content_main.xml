@@ -25,17 +25,16 @@
         android:layout_marginTop="8dp"
         android:text="Speakers to chromecast"
         app:layout_constraintStart_toEndOf="@+id/hallOnButton"
-        app:layout_constraintTop_toBottomOf="@+id/tvOffB" />
+        app:layout_constraintTop_toBottomOf="@+id/muteb" />
 
     <Button
         android:id="@+id/volup1b"
         android:layout_width="125dp"
         android:layout_height="60dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Volume Up"
-        app:layout_constraintStart_toEndOf="@+id/tvOffB"
-        app:layout_constraintTop_toBottomOf="@+id/unmuteB" />
+        app:layout_constraintStart_toStartOf="@+id/bcB"
+        app:layout_constraintTop_toBottomOf="@+id/bcB" />
 
     <Button
         android:id="@+id/pOffB"
@@ -47,26 +46,6 @@
         app:layout_constraintTop_toBottomOf="@+id/pONb" />
 
     <Button
-        android:id="@+id/tvOffB"
-        android:layout_width="125dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="TV Off"
-        app:layout_constraintStart_toEndOf="@+id/hallOnButton"
-        app:layout_constraintTop_toBottomOf="@+id/TVonb" />
-
-    <Button
-        android:id="@+id/unmuteB"
-        android:layout_width="125dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="unmute"
-        app:layout_constraintStart_toEndOf="@+id/TVonb"
-        app:layout_constraintTop_toBottomOf="@+id/muteb" />
-
-    <Button
         android:id="@+id/TVonb"
         android:layout_width="125dp"
         android:layout_height="60dp"
@@ -75,6 +54,24 @@
         android:text="TV On"
         app:layout_constraintStart_toEndOf="@+id/hallOnButton"
         app:layout_constraintTop_toBottomOf="@+id/mainOffButton" />
+
+    <Button
+        android:id="@+id/boB"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Open Blinds"
+        app:layout_constraintStart_toStartOf="@+id/lightsOffButton"
+        app:layout_constraintTop_toBottomOf="@+id/lightsOffButton" />
+
+    <Button
+        android:id="@+id/bcB"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Close Blinds"
+        app:layout_constraintStart_toStartOf="@+id/lightsOffButton"
+        app:layout_constraintTop_toBottomOf="@+id/boB" />
 
     <Button
         android:id="@+id/pONb"
@@ -89,11 +86,9 @@
         android:id="@+id/muteb"
         android:layout_width="125dp"
         android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="mute"
-        app:layout_constraintStart_toEndOf="@+id/mainOnButton"
-        app:layout_constraintTop_toBottomOf="@+id/lightsOffButton" />
+        app:layout_constraintStart_toStartOf="@+id/TVonb"
+        app:layout_constraintTop_toTopOf="@+id/pOffB" />
 
     <Button
         android:id="@+id/hallOffButton"
